@@ -12,14 +12,17 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        public math MathClass = new math();
         public Form1()
         {
             InitializeComponent();
         }
 
-        float a, b;
-        int count;
-        bool znak = true;
+        public float x;
+        public float y;
+        public float res;
+        public string count;
+        public bool znak = true;
 
         private void button17_Click_1(object sender, EventArgs e)
         {
@@ -48,92 +51,41 @@ namespace Calculator
             
         }
 
-        private async void calculate()
-        {
-
-            switch (count)
-            {
-                case 1:
-                    b = a + float.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
-                    break;
-
-                case 2:
-                    b = a - float.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
-                    break;
-                case 3:
-                    b = a * float.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
-                    break;
-                case 4:
-                    if (float.Parse(textBox1.Text) != 0)
-                    {
-                        b = a / float.Parse(textBox1.Text);
-                        textBox1.Text = b.ToString();
-                    }
-                    else 
-                    { textBox1.Text = "На ноль делить нельзя"; }
-                    break;
-                case 5:
-                    if (a > 0)
-                    {
-                        b = (float)Math.Log(a, 2);
-                        textBox1.Text = b.ToString();
-                    }
-                    else
-                    {
-                        textBox1.Text = "Введите аргумент больше 0";
-                    }
-                    break;
-                case 6:
-
-                    b = (float)Math.Tan(a);
-                    textBox1.Text = b.ToString();
-                    break;
-
-
-
-                default:
-                    break;
-            }
-
-        }
-
+       
         private void button4_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 1;
-            label1.Text = a.ToString() + "+";
+            count = "+";
+            label1.Text = x.ToString() + "+";
             znak = true;
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 2;
-            label1.Text = a.ToString() + "-";
+            count = "-";
+            label1.Text = x.ToString() + "-";
             znak = true;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 3;
-            label1.Text = a.ToString() + "*";
+            count = "*";
+            label1.Text = x.ToString() + "*";
             znak = true;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 4;
-            label1.Text = a.ToString() + "/";
+            count = "/";
+            label1.Text = x.ToString() + "/";
             znak = true;
         }
 
@@ -141,7 +93,9 @@ namespace Calculator
 
         private void button19_Click(object sender, EventArgs e)
         {
-            calculate();
+            y = float.Parse(textBox1.Text);
+            res = MathClass.Calculate(x, y, count);
+            textBox1.Text = res.ToString();
             label1.Text = "";
         }
 
@@ -152,31 +106,26 @@ namespace Calculator
         }
         private void button21_Click_1(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 6;
-            label1.Text = "tan" + (a.ToString());
+            count = "tan";
+            label1.Text = "tan" +  x.ToString();
             znak = true;
         }
 
         private void button20_Click_1(object sender, EventArgs e)
         {
-            a = float.Parse(textBox1.Text);
+            
+            x = float.Parse(textBox1.Text);
             textBox1.Clear();
-            count = 5;
-            label1.Text = "log(2)" + (a.ToString());
+            count = "log";
+            label1.Text = "log" + x.ToString();
             znak = true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
