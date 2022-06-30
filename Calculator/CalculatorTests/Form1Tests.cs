@@ -2,7 +2,7 @@
 using System;
 using Calculator;
 
-namespace TestNaSpid.Tests
+namespace Calculator.Tests
 {
     [TestClass]
     public class UnitTest1
