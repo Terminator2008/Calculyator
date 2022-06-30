@@ -276,23 +276,22 @@
             // 
             // button20
             // 
-            this.button20.BackColor = System.Drawing.Color.MistyRose;
             this.button20.Location = new System.Drawing.Point(243, 55);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(46, 69);
             this.button20.TabIndex = 21;
             this.button20.Text = "log";
-            this.button20.UseVisualStyleBackColor = false;
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click_1);
             // 
             // button21
             // 
-            this.button21.BackColor = System.Drawing.Color.MistyRose;
             this.button21.Location = new System.Drawing.Point(243, 130);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(46, 80);
             this.button21.TabIndex = 22;
             this.button21.Text = "tan";
-            this.button21.UseVisualStyleBackColor = false;
+            this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.button21_Click_1);
             // 
             // Form1

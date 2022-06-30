@@ -193,7 +193,7 @@ namespace Calculator
             textBox1.Text = "";
             label1.Text = "";
         }
-        private void button21_Click(object sender, EventArgs e)
+        private void button21_Click_1(object sender, EventArgs e)
         {
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
@@ -202,7 +202,7 @@ namespace Calculator
             znak = true;
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void button20_Click_1(object sender, EventArgs e)
         {
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
@@ -211,19 +211,12 @@ namespace Calculator
             znak = true;
         }
 
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button21_Click_1(object sender, EventArgs e)
         {
 
         }
