@@ -117,8 +117,25 @@ namespace Calculator
                     }
                     else 
                     { textBox1.Text = "На ноль делить нельзя"; }
-                    break;               
-                   
+                    break;
+                case 5:
+                    if (a > 0)
+                    {
+                        b = (float)Math.Log(a, 2);
+                        textBox1.Text = b.ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text = "Введите аргумент больше 0";
+                    }
+                    break;
+                case 6:
+
+                    b = (float)Math.Tan(a);
+                    textBox1.Text = b.ToString();
+                    break;
+
+
 
                 default:
                     break;
@@ -176,8 +193,25 @@ namespace Calculator
             textBox1.Text = "";
             label1.Text = "";
         }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 6;
+            label1.Text = "tan" + (a.ToString());
+            znak = true;
+        }
 
-    
+        private void button20_Click(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 5;
+            label1.Text = "log(2)" + (a.ToString());
+            znak = true;
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -185,6 +219,11 @@ namespace Calculator
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button21_Click_1(object sender, EventArgs e)
         {
 
         }
