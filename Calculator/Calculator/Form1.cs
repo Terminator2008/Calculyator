@@ -12,17 +12,14 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        public math MathClass = new math();
         public Form1()
         {
             InitializeComponent();
         }
 
-        public float x;
-        public float y;
-        public float res;
-        public string count;
-        public bool znak = true;
+        float x, y;
+        string count;
+        bool znak = true;
 
         private void button17_Click_1(object sender, EventArgs e)
         {

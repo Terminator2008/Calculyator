@@ -4,8 +4,6 @@ using calculator1.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Calculator;
 
-
-
 namespace calculator1.Controllers
 {
     public class HomeController : Controller
@@ -17,6 +15,7 @@ namespace calculator1.Controllers
             _logger = logger;
         }
 
+
         public ActionResult Index()
         {
             ViewBag.Operation = new SelectListItem[]
@@ -26,8 +25,8 @@ namespace calculator1.Controllers
                 new SelectListItem() { Value = "+", Text ="Прибавить" },
                 new SelectListItem() { Value = "-", Text ="Отнять" },
                 new SelectListItem() { Value = "/", Text ="Разделить" },
-                new SelectListItem() { Value = "tan", Text ="tan" },
-                new SelectListItem() { Value = "log", Text ="log" }
+                new SelectListItem() { Value = "tan", Text ="Тангенс числа" },
+                new SelectListItem() { Value = "log", Text ="Логарифм" }
             };
             return View();
         }
@@ -35,13 +34,13 @@ namespace calculator1.Controllers
 
         [HttpPost]
         public ActionResult Index(
-                   float firstNumber,
-                   float secondNumber,
-                   string operation)
+            float firstNumber,
+            float secondNumber,
+            string operation)
         {
 
 
-            var calc = new math();
+            var calc = new Calc();
             float result = calc.Calculate(firstNumber, secondNumber, operation);
 
             ViewBag.Result = result;
@@ -51,8 +50,8 @@ namespace calculator1.Controllers
                 new SelectListItem() { Value = "+", Text ="Прибавить" },
                 new SelectListItem() { Value = "-", Text ="Отнять" },
                 new SelectListItem() { Value = "/", Text ="Разделить" },
-                new SelectListItem() { Value = "tan", Text ="tan" },
-                new SelectListItem() { Value = "log", Text ="log" }
+                new SelectListItem() { Value = "tan", Text ="Тангенс числа" },
+                new SelectListItem() { Value = "log", Text ="Логарифм" }
             };
             return View();
         }
